@@ -179,7 +179,7 @@ def visit_level(labels, predicts):
 
 def train(data_loader, model, label_tokenizer, optimizer, device):
     train_loss = 0
-    # 调试用，看一下加载几次后会爆显存
+   
     count = 0
     for data in data_loader:
         model.train()
@@ -195,7 +195,7 @@ def train(data_loader, model, label_tokenizer, optimizer, device):
         #     loss = F.binary_cross_entropy_with_logits(out, label)
         out = model(data)
 
-        # 调整并行化后的输出
+       
         # out = 0.5 * (out[:int(0.5*len(out))] + out[int(0.5*len(out)):])
 
         loss = F.binary_cross_entropy_with_logits(out,label)
@@ -211,7 +211,7 @@ def train(data_loader, model, label_tokenizer, optimizer, device):
 
 # def train(data_loader, model, label_tokenizer, optimizer, device, scaler):
 #     train_loss = 0
-#     # 调试用，看一下加载几次后会爆显存
+#     
 #     count = 0
 #     for data in data_loader:
 #         model.train()
