@@ -12,7 +12,6 @@ from data.Task import *
 from models.Model import *
 from models.baselines import *
 # from torch.cuda.amp import GradScaler
-# os.environ["CUDA_VISIBLE_DEVICES"] = "1,2,3"  # 有几块GPU写多少
 torch.distributed.init_process_group(backend="nccl")
 
 
